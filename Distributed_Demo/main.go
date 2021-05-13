@@ -50,6 +50,7 @@ func Put(w http.ResponseWriter, r *http.Request) {
 	io.Copy(f, r.Body)
 }
 
+// Get 函数负责处理HTTP的Get请求，从本地硬盘上读取内容并将其作为HTTP的响应输出
 func Get(w http.ResponseWriter, r *http.Request) {
 
 	f, e := os.Open(("C:/Users/Administrator/go/src/awesomeProject/test_file" + "/objects/" + strings.Split(r.URL.EscapedPath(), "/")[2]))
